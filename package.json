@@ -1,0 +1,16 @@
+{
+  "name": "skintone",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sharon van Opzeeland",
+  "license": "ISC",
+  "dependencies": {
+    "camelcase": "^6.3.0",
+    "express": "^4.17.2",
+    "skin-tone": "^3.0.0"
+  }
+}
