@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "camelcase": "^6.3.0",
-    "express": "^4.17.2",
+    "express": "^4.17.3",
     "skin-tone": "^3.0.0"
   }
 }

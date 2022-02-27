@@ -1,0 +1,23 @@
+{
+  "name": "matchingapp",
+  "version": "1.0.0",
+  "description": "dit moest ik hebben",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sharonvopzeeland/blok_tech.git"
+  },
+  "author": "Sharon van Opzeeland",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sharonvopzeeland/blok_tech/issues"
+  },
+  "homepage": "https://github.com/sharonvopzeeland/blok_tech#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
