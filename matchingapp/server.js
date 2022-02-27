@@ -3,6 +3,9 @@ const app = express();
 const port = 1111;
 
 
+/* MIDDLEWARE (moet boven routes!!!!!!) */
+app.use(express.static('static'))
+
 /* ROUTES */
 app.get('/', (req, res) => {
   res.send('Hello World!')
@@ -25,6 +28,23 @@ app.get('/chats', (req, res) => {
 })
 
 
-app.listen(port, () => {
-  console.log(`web server running on http://localhost:${port}`)
+
+
+
+
+
+
+
+
+
+
+
+/* ERROR (moet onderaan!!!!!!!!!) */
+app.use( (req, res) => {
+    res.status(404).send('Error 404 file not found')
 })
+
+
+app.listen(port, () => {
+    console.log(`web server running on http://localhost:${port}`)
+  })
