@@ -21,7 +21,6 @@
 /*********** BODY GENERAL ***********/
 body{
     position: relative;
-
 }
 
 h1 {
@@ -136,6 +135,14 @@ li {
 }
 
 
+/*********** MAIN ZERO ***********/
+.zero section:nth-of-type(1) {
+    width: 22em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 /*********** FOOTER HOME ***********/
 .home footer {
     background-color: var(--second-color-orange);
@@ -145,6 +152,52 @@ li {
 
 }
 
+/*********** FORM ***********/
+form {
+    margin-left: auto;
+    margin-right: auto;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+
+}
+
+label {
+    padding: .5em .5em;
+    font-size: 1.3em;
+    font-family: new-order, sans-serif;
+}
+
+select {
+    font-size: .8em;
+    font-family: new-order, sans-serif;
+    padding: .2em 1em;
+    margin-left: 1em;
+}
+
+input {
+    padding: .2em 1em;
+    margin-left: 1em;
+}
+
+button {
+    background-color: var(--second-color-orange);
+    color: var(--background-color-white);
+    font-family: new-order, sans-serif;
+    font-weight: 700;
+    font-size: 1.8em;
+    padding: .5em 1.5em;
+    border: none;
+    border-radius: 3em;
+    margin-top: 3em;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: block;
+    width: max-content;
+    text-decoration: none;
+
+}
 
 
 

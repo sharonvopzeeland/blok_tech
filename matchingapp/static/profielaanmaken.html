@@ -20,18 +20,61 @@
     </header>
 
     <main>
-        <section>
-            <h1>Foto toevoegen</h1>
-            <p>Selecteer en vul in</p>
+        <h1>Profiel maken</h1>
+ 
+        <form action="" method="post">
+            <label for="name">Naam: 
+                <input type="text" name="name" id="name" required size="30">
+            </label>
 
-            <ul>
-                <li>Ik houd van</li>
-                <li>Omgeving</li>
-                <li>Irritaties</li>
-            </ul>
-        </section>
+            <label for="email">Email:
+                <input type="email" name="email" id="email" required size="30">
+            </label>
 
-        <a href="home.html">Klaar</a>
+            <label for="hobby">Hobby's:
+                <select name="hobby" id="hobby">
+                    <option value="puzzelen">Puzzelen</option>
+                    <option value="breien">Breien</option>
+                    <option value="wandelen">Wandelen</option>
+                    <option value="tuinieren">Tuinieren</option>
+                    <option value="kaarten">Kaarten</option>
+                    <option value="sporten">Sporten</option>
+                </select>
+            </label>
+
+            <label for="omgeving">Omgeving:
+                <select name="omgeving" id="omgeving">
+                    <option value="noord-holland">Noord-Holland</option>
+                    <option value="zuid-holland">Zuid-Holland</option>
+                    <option value="utrecht">Utrecht</option>
+                    <option value="zeeland">Zeeland</option>
+                    <option value="noord-brabant">Noord-Brabant</option>
+                    <option value="limburg">Limburg</option>
+                    <option value="gelderland">Gelderland</option>
+                    <option value="overijssel">Overijssel</option>
+                    <option value="flevoland">Flevoland</option>
+                    <option value="drenthe">Drenthe</option>
+                    <option value="groningen">Groningen</option>
+                    <option value="friesland">Friesland</option>
+                </select>
+            </label>
+
+            <label for="irritaties">Irritaties:
+                <select name="irritaties" id="irritaties">
+                    <option value="snurken">Snurken</option>
+                    <option value="natte sokken">Natte sokken</option>
+                    <option value="beslagen bril">Beslagen bril</option>
+                    <option value="jeuk">Jeuk</option>
+                    <option value="lawaai">Lawaai</option>
+                </select>
+            </label>
+               
+
+            <button type="submit">Maak aan</button>
+        </form>
+
+
+        
     </main>
 
     <footer>
