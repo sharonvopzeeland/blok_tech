@@ -3,6 +3,8 @@ const app = express();
 const port = 1111;
 
 
+
+
 /* MIDDLEWARE (moet boven routes!!!!!!) */
 app.use(express.static('static'))
 

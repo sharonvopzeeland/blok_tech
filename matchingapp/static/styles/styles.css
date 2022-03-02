@@ -8,8 +8,8 @@
 
 :root {
     --background-color-white: #FFFFFF;
-    --main-color-pink: #FF2761;
-    --second-color-pink: #B70535;
+    --main-color-orange: #F2BF87;
+    --second-color-orange: #CE904B;
     --text-color-black: #232323;
     --no-button-red: #ED5B5B;
     --yes-button-green: #72D188;
@@ -25,7 +25,7 @@ body{
 }
 
 h1 {
-    color: var(--main-color-pink);
+    color: var(--main-color-orange);
     font-family: new-order, sans-serif;
     font-weight: 700;
     font-size: 3em;
@@ -46,7 +46,7 @@ p {
 }
 
 a {
-    background-color: var(--second-color-pink);
+    background-color: var(--second-color-orange);
     color: var(--background-color-white);
     font-family: new-order, sans-serif;
     font-weight: 700;
@@ -78,7 +78,7 @@ li {
 
 /*********** HEADER ZERO & PROFIEL ***********/
 .zero header, .profiel header {
-    background-color: var(--main-color-pink);
+    background-color: var(--main-color-orange);
     height: 5em;
     border-bottom-left-radius: 4em;
     border-bottom-right-radius: 4em;
@@ -93,7 +93,7 @@ li {
 
 /*********** HEADER HOME ***********/
 .home header {
-    background-color: var(--main-color-pink);
+    background-color: var(--main-color-orange);
     height: 5em;
     display: flex;
 }
@@ -123,7 +123,7 @@ li {
 
 /*********** MAIN HOME ***********/
 .home main {
-    background-color: var(--main-color-pink);
+    background-color: var(--main-color-orange);
 }
 .home main h2 {
     font-family: new-order, sans-serif;
@@ -138,7 +138,7 @@ li {
 
 /*********** FOOTER HOME ***********/
 .home footer {
-    background-color: var(--second-color-pink);
+    background-color: var(--second-color-orange);
     border-top-left-radius: 4em;
     border-top-right-radius: 4em;
     height: 2.5em;

@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/sharonvopzeeland/blok_tech#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "handlebars": "^4.7.7"
   },
   "devDependencies": {
     "eslint": "^8.10.0",
