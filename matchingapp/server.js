@@ -20,6 +20,10 @@ app.get('', (req, res) => {
   res.render('index')
 })
 
+app.get('/profiel', (req, res) => {
+  res.render('profielaanmaken')
+})
+
 //app.get('', (req, res) => {
 //  res.render('tutorial', { text: 'this is ejs'})
 // })
@@ -31,15 +35,16 @@ app.get('', (req, res) => {
 
 
 
+
+
+
+// ERROR
+app.use( (req, res) => {
+  res.status(404).send('Error 404 file not found')
+})
+
+
 // listen
 app.listen(port, () => {
   console.log(`web server running on http://localhost:${port}`)
 })
-
-
-
-/* ERROR (moet onderaan!!!!!!!!!) */
-app.use( (req, res) => {
-    res.status(404).send('Error 404 file not found')
-})
-
