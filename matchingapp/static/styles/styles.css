@@ -82,41 +82,17 @@ li {
     border-bottom-left-radius: 4em;
     border-bottom-right-radius: 4em;
 }
-.zero header img, .profiel header img {
+.zero header img, .profiel header img, .home header img {
    display: block;
    padding-top: .5em;
    margin-left: auto;
    margin-right: auto;
 }
 
-
-/*********** HEADER HOME ***********/
 .home header {
     background-color: var(--main-color-orange);
     height: 5em;
-    display: flex;
 }
-
-.home header img {
-    display: block;
-    margin-left: 2em;
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 3em;
-    height: 3em;
-}
-
-.home header nav {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-}
-
-.home header nav a img {
-    width: 2em;
-    height: 2em;
-}
-
 
 
 
@@ -201,4 +177,21 @@ button {
 
 
 
+.home section img {
+    border-radius: 2em;
 
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: fill;
+    display: block;
+}
+
+.container-foto {
+    width: 430px;
+    height: 430px;
+}
+
+.home h1 {
+    color: var(--background-color-white);
+}

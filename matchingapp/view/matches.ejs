@@ -16,20 +16,15 @@
 
 <body class="home">
     <header>
-        <img src="./images/logo2.png" alt="Logo Hobby Connector zonder tekst">
-
-        <!-- linkjes naar homepage en berichten -->
-        <nav>
-            <a href=""><img src="" alt=""></a>
-            <a href="chats.html"><img src="" alt=""></a>
-        </nav>
+        <%- include('includes/header.ejs') -%>
     </header>
 
     <main>
         <section>
-            <h1>Filter</h1>
-            <img src="" alt="">
-            <h2>Jopie (81)</h2>
+            <div class="container-foto">
+                <img src="images/jopie.jpeg" alt="Jopie (81 jaar)">
+            </div>  
+            <h1> <%= profielen[0].naam %> </h1>
             <p>Houdt van: breien, tuinieren en puzzelen</p>
             <p>Omgeving: Breda</p>
             <p>Irritaties: onkruid</p>
