@@ -9,13 +9,13 @@
         <section class="caroussel">
             <h1>Profielen</h1>
             <ul>
-                <%= profielen.forEach(function(profiel) { %>
+                <% profielen.forEach(function(profiel) { %>
                     <li>
-                        <p><%= profielen.naam %></p>
-                        <p><%= profielen.email %></p>
-                        <p><%= profielen.leeftijd %></p>
-                        <p><%= profielen.hobby %></p>
-                        <p><%= profielen.omgeving %></p>  
+                        <p><%= profiel.naam %></p>
+                        <p><%= profiel.email %></p>
+                        <p><%= profiel.leeftijd %></p>
+                        <p><%= profiel.hobby %></p>
+                        <p><%= profiel.omgeving %></p>  
                     </li>
              <% }) %>
             </ul>
