@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js && gulp"
   },
   "repository": {
     "type": "git",
@@ -20,10 +20,16 @@
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.3",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-watch": "^5.0.1",
     "handlebars": "^4.7.7"
   },
   "devDependencies": {
     "eslint": "^8.10.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat-css": "^3.1.0",
+    "gulp-nodemon": "^2.5.0",
     "nodemon": "^2.0.15"
   }
 }
