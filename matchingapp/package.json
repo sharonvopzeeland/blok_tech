@@ -18,12 +18,13 @@
   },
   "homepage": "https://github.com/sharonvopzeeland/blok_tech#readme",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.3",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-watch": "^5.0.1",
-    "handlebars": "^4.7.7"
+    "mongodb": "^4.4.1"
   },
   "devDependencies": {
     "eslint": "^8.10.0",

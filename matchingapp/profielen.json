@@ -1,0 +1,23 @@
+[{
+    "naam": "Jopie",
+    "email": "jopie123@gmail.com",
+    "leeftijd": 81,
+    "hobby": "Puzzelen",
+    "omgeving": "Noord-Holland"
+  }, 
+  {
+    "naam": "Gerard",
+    "email": "gerardus@gmail.com",
+    "leeftijd": 80,
+    "hobby": "Tuinieren",
+    "omgeving": "Zuid-Holland"
+  },
+  {
+    "naam": "Mary",
+    "email": "maryvo@gmail.com",
+    "leeftijd": 76,
+    "hobby": "Breien",
+    "omgeving": "Friesland"
+  }
+  
+  ]

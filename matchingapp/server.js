@@ -1,7 +1,14 @@
 // imports
-const express = require('express')
+const express = require('express');
+const dotenv = require('dotenv').config();
 const app = express();
 const port = 3000;
+
+const { MongoClient } = require('mongodb');
+const { ObjectId } = require('mongodb');
+
+let db = '0';
+console.log(process.env.TESTVAR);
 
 const profielen = [{
   naam: "Jopie",
@@ -83,3 +90,22 @@ app.use( (req, res) => {
 app.listen(port, () => {
   console.log(`web server running on http://localhost:${port}`)
 })
+
+// connect to database
+
+async function connectDB() {
+
+  const uri = process.env.DB_URI;
+  const client = new MongoClient(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+
+  try {
+    await client.connect();
+    db = client.db(process.env.DB_NAME);
+
+  } catch (error) {
+    throw error;
+  }
+}
