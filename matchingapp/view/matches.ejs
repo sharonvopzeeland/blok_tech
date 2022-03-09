@@ -1,36 +1,24 @@
-<!DOCTYPE html>
-<html lang="nl">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-        <title>Hobby Connector</title>
-    
-        <link href="styles/styles.css" rel="stylesheet">
-        <link rel="icon" type="image/svg+xml" href="images/logo2.png">
-    
-        <!-- fonts -->
-        <link rel="stylesheet" href="https://use.typekit.net/hro6ggv.css"> <!-- new order -->
-    </head>
+<%- include ("./includes/head.ejs") %>
 
 <body class="home">
-    <header>
         <%- include('includes/header.ejs') -%>
-    </header>
 
     <main>
-        <section>
-            <div class="container-foto">
-                <img src="images/jopie.jpeg" alt="Jopie (81 jaar)">
-            </div>  
-            <h1> <%= profielen[0].naam %> </h1>
-            <p>Houdt van: breien, tuinieren en puzzelen</p>
-            <p>Omgeving: Breda</p>
-            <p>Irritaties: onkruid</p>
+        
 
-            <button>X</button>
-            <button>X</button>
+        <section class="caroussel">
+            <h1>Profielen</h1>
+            <ul>
+                <%= profielen.forEach(function(profiel) { %>
+                    <li>
+                        <p><%= profielen.naam %></p>
+                        <p><%= profielen.email %></p>
+                        <p><%= profielen.leeftijd %></p>
+                        <p><%= profielen.hobby %></p>
+                        <p><%= profielen.omgeving %></p>  
+                    </li>
+             <% }) %>
+            </ul>
         </section>
     </main>
 

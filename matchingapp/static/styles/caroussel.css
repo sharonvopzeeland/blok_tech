@@ -1,0 +1,20 @@
+.caroussel ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    
+    overflow: scroll;
+    scroll-snap-type: x mandatory;
+  }
+    
+.caroussel ul li{
+    width: 100%;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+  }
+    
+.caroussel li  {
+    display: block;
+    position: relative ; 
+  }

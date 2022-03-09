@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="nl">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-        <title>Hobby Connector</title>
-    
-        <link href="styles/styles.css" rel="stylesheet">
-        <link rel="icon" type="image/svg+xml" href="images/logo2.png">
-    
-        <!-- fonts -->
-        <link rel="stylesheet" href="https://use.typekit.net/hro6ggv.css"> <!-- new order -->
-    </head>
+<%- include ("./includes/head.ejs") %>
 
 <body class="profiel">
     <%- include('includes/header.ejs') -%>
@@ -27,6 +13,10 @@
 
             <label for="email">Email:
                 <input type="email" name="email" id="email" required size="30">
+            </label>
+
+            <label for="leeftijd">Leeftijd:
+                <input type="number" name="leeftijd" id="leeftijd">
             </label>
 
             <label for="hobby">Hobby's:
@@ -54,16 +44,6 @@
                     <option value="drenthe">Drenthe</option>
                     <option value="groningen">Groningen</option>
                     <option value="friesland">Friesland</option>
-                </select>
-            </label>
-
-            <label for="irritaties">Irritaties:
-                <select name="irritaties" id="irritaties">
-                    <option value="snurken">Snurken</option>
-                    <option value="natte sokken">Natte sokken</option>
-                    <option value="beslagen bril">Beslagen bril</option>
-                    <option value="jeuk">Jeuk</option>
-                    <option value="lawaai">Lawaai</option>
                 </select>
             </label>
                

@@ -1,27 +1,4 @@
-/* CSS Document */
-*, *::after, *::before {
-    box-sizing:border-box;
-    margin: 0;
-    padding: 0;
-}
 
-
-:root {
-    --background-color-white: #FFFFFF;
-    --main-color-orange: #F2BF87;
-    --second-color-orange: #CE904B;
-    --text-color-black: #232323;
-    --no-button-red: #ED5B5B;
-    --yes-button-green: #72D188;
-}
-
-
-
-
-/*********** BODY GENERAL ***********/
-body{
-    position: relative;
-}
 
 h1 {
     color: var(--main-color-orange);

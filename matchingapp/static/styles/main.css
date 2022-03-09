@@ -1,0 +1,34 @@
+/* main css */
+*, *::after, *::before {
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --background-color-white: #FFFFFF;
+    --main-color-orange: #F2BF87;
+    --second-color-orange: #CE904B;
+    --text-color-black: #232323;
+    --no-button-red: #ED5B5B;
+    --yes-button-green: #72D188;
+}
+
+body{
+    position: relative;
+}
+
+h1, h2, h3, p, a, ul, l {
+    font-family: new-order, sans-serif;
+}
+
+h1 {
+    color: var(--main-color-orange);
+    font-family: new-order, sans-serif;
+    font-weight: 700;
+    font-size: 3em;
+    text-align: center;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
