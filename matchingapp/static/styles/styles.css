@@ -1,25 +1,6 @@
 
-
-h1 {
-    color: var(--main-color-orange);
-    font-family: new-order, sans-serif;
-    font-weight: 700;
-    font-size: 3em;
-    text-align: center;
-    padding-top: .5em;
-    padding-bottom: .5em;
-}
     
-p {
-    color: var(--text-color-black);
-    font-family: new-order, sans-serif;
-    font-weight: 400;
-    font-size: 1.2em;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 1em;
-}
+
 
 a {
     background-color: var(--second-color-orange);
@@ -74,24 +55,7 @@ li {
 
 
 /*********** MAIN HOME ***********/
-.home main {
-    background-color: var(--main-color-orange);
-}
-.home main h2 {
-    font-family: new-order, sans-serif;
-    font-weight: 700;
-    font-size: 2em;
-    color: var(--background-color-white);
-    padding-top: .2em;
-    padding-bottom: .2em;
-    margin-left: .9em;
 
-
-
-
-
-    
-}
 
 
 /*********** MAIN ZERO ***********/
@@ -103,13 +67,7 @@ li {
 
 
 /*********** FOOTER HOME ***********/
-.home footer {
-    background-color: var(--second-color-orange);
-    border-top-left-radius: 4em;
-    border-top-right-radius: 4em;
-    height: 2.5em;
 
-}
 
 /*********** FORM ***********/
 form {
@@ -161,8 +119,6 @@ button {
 
 
 .home section img {
-    border-radius: 2em;
-
     width: 100%;
     margin-left: auto;
     margin-right: auto;

@@ -7,23 +7,20 @@
         
 
         <section class="caroussel">
-            <h1>Profielen</h1>
+            <h1>Jouw matches</h1>
+            <h2>swipe voor meer</h2>
             <ul>
                 <% profielen.forEach(function(profiel) { %>
                     <li>
-                        <p><%= profiel.naam %></p>
-                        <p><%= profiel.email %></p>
-                        <p><%= profiel.leeftijd %></p>
-                        <p><%= profiel.hobby %></p>
-                        <p><%= profiel.omgeving %></p>  
+                        <img src="images/<%= profiel.url %>" alt="Profielfoto">
+                        <p><%= profiel.naam %>, <%= profiel.leeftijd %></p>
+                        <p>Hobby: <%= profiel.hobby %></p>
+                        <p>Omgeving: <%= profiel.omgeving %></p>  
                     </li>
              <% }) %>
             </ul>
         </section>
     </main>
 
-    <footer>
-        <button>X</button>
-    </footer>
 </body>
 </html>

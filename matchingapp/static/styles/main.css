@@ -24,11 +24,9 @@ h1, h2, h3, p, a, ul, l {
 
 h1 {
     color: var(--main-color-orange);
-    font-family: new-order, sans-serif;
     font-weight: 700;
     font-size: 3em;
     text-align: center;
     padding-top: .5em;
     padding-bottom: .5em;
 }
-
