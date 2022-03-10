@@ -5,103 +5,109 @@ dotenv.config()
 const app = express();
 const port = 3000;
 
+const bodyParser = require('body-parser');
+const slug = require('slug');
+
 const { MongoClient } = require('mongodb');
 const { ObjectId } = require('mongodb');
 
+const res = require('express/lib/response');
+const { redirect } = require('express/lib/response');
+
 let db = null;
 
-// const profielen = [
-//   {
-//     "url": "jopie.jpeg",
-//     "naam": "Jopie",
-//     "email": "jopie123@gmail.com",
-//     "leeftijd": 81,
-//     "hobby": "Puzzelen",
-//     "omgeving": "Noord-Holland"
-//   }, 
+const profielen = [
+  {
+    "url": "jopie.jpeg",
+    "naam": "Jopie",
+    "email": "jopie123@gmail.com",
+    "leeftijd": 81,
+    "hobby": "Puzzelen",
+    "omgeving": "Noord-Holland"
+  }, 
 
-//   {
-//     "url": "henry.jpeg",
-//     "naam": "Henry",
-//     "email": "henrybooms@gmail.com",
-//     "leeftijd": 79,
-//     "hobby": "Puzzelen",
-//     "omgeving": "Zuid-Holland"
-//   },
+  {
+    "url": "henry.jpeg",
+    "naam": "Henry",
+    "email": "henrybooms@gmail.com",
+    "leeftijd": 79,
+    "hobby": "Puzzelen",
+    "omgeving": "Zuid-Holland"
+  },
 
-//   {
-//     "url": "joop.jpeg",
-//     "naam": "Joop",
-//     "email": "joopkaars@gmail.com",
-//     "leeftijd": 72,
-//     "hobby": "Puzzelen",
-//     "omgeving": "Noord-Holland"
-//   },
+  {
+    "url": "joop.jpeg",
+    "naam": "Joop",
+    "email": "joopkaars@gmail.com",
+    "leeftijd": 72,
+    "hobby": "Puzzelen",
+    "omgeving": "Noord-Holland"
+  },
 
-//   {
-//     "url": "leone.jpeg",
-//     "naam": "Leone",
-//     "email": "leonehogeslag@gmail.com",
-//     "leeftijd": 76,
-//     "hobby": "Puzzelen",
-//     "omgeving": "Friesland"
-//   },
+  {
+    "url": "leone.jpeg",
+    "naam": "Leone",
+    "email": "leonehogeslag@gmail.com",
+    "leeftijd": 76,
+    "hobby": "Puzzelen",
+    "omgeving": "Friesland"
+  },
 
-//   {
-//     "url": "miep.jpeg",
-//     "naam": "Miep",
-//     "email": "miepmop@gmail.com",
-//     "leeftijd": 88,
-//     "hobby": "Puzzelen",
-//     "omgeving": "Groningen"
-//   },
+  {
+    "url": "miep.jpeg",
+    "naam": "Miep",
+    "email": "miepmop@gmail.com",
+    "leeftijd": 88,
+    "hobby": "Puzzelen",
+    "omgeving": "Groningen"
+  },
 
-//   {
-//     "url": "frank.jpg",
-//     "naam": "Frank",
-//     "email": "frankus@gmail.com",
-//     "leeftijd": 80,
-//     "hobby": "Kaarten",
-//     "omgeving": "Zuid-Holland"
-//   },
+  {
+    "url": "frank.jpg",
+    "naam": "Frank",
+    "email": "frankus@gmail.com",
+    "leeftijd": 80,
+    "hobby": "Kaarten",
+    "omgeving": "Zuid-Holland"
+  },
 
-//   {
-//     "url": "piet.jpeg",
-//     "naam": "Piet",
-//     "email": "pietje00@gmail.com",
-//     "leeftijd": 84,
-//     "hobby": "Kaarten",
-//     "omgeving": "Limburg"
-//   },
+  {
+    "url": "piet.jpeg",
+    "naam": "Piet",
+    "email": "pietje00@gmail.com",
+    "leeftijd": 84,
+    "hobby": "Kaarten",
+    "omgeving": "Limburg"
+  },
 
-//   {
-//     "url": "ruud.jpeg",
-//     "naam": "Ruud",
-//     "email": "ruudkastoe@gmail.com",
-//     "leeftijd": 69,
-//     "hobby": "Kaarten",
-//     "omgeving": "Zeeland"
-//   },
+  {
+    "url": "ruud.jpeg",
+    "naam": "Ruud",
+    "email": "ruudkastoe@gmail.com",
+    "leeftijd": 69,
+    "hobby": "Kaarten",
+    "omgeving": "Zeeland"
+  },
 
-//   {
-//     "url": "sientje.jpeg",
-//     "naam": "Sientje",
-//     "email": "sientje56@gmail.com",
-//     "leeftijd": 65,
-//     "hobby": "Kaarten",
-//     "omgeving": "Noord-Holland"
-//   },
+  {
+    "url": "sientje.jpeg",
+    "naam": "Sientje",
+    "email": "sientje56@gmail.com",
+    "leeftijd": 65,
+    "hobby": "Kaarten",
+    "omgeving": "Noord-Holland"
+  },
 
-//   {
-//     "url": "toni.jpeg",
-//     "naam": "Toni",
-//     "email": "toontjeboontje@gmail.com",
-//     "leeftijd": 76,
-//     "hobby": "Kaarten",
-//     "omgeving": "Drenthe"
-//   }
+  {
+    "url": "toni.jpeg",
+    "naam": "Toni",
+    "email": "toontjeboontje@gmail.com",
+    "leeftijd": 76,
+    "hobby": "Kaarten",
+    "omgeving": "Drenthe"
+  }
 
-// ]
+]
 
 
 // static files (middleware)
@@ -110,6 +116,8 @@ app.use('/styles', express.static(__dirname + 'static/styles'))
 app.use('/scripts', express.static(__dirname + 'static/scripts'))
 app.use('/images', express.static(__dirname + 'static/images'))
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // set view
 app.set('views', './view')
@@ -121,22 +129,40 @@ app.get('', (req, res) => {
 })
 
 app.get('/profiel', (req, res) => {
+
   res.render('profielaanmaken')
+
 })
 
 app.post('/matches', async (req, res) => {
+  console.log('yo');
+
+  let toevoegenProfiel = {
+    slug: slug(req.body.naam),
+    name: req.body.naam,
+    email: req.body.email,
+    leeftijd: req.body.leeftijd,
+    hobby: req.body.hobby,
+  };
+
+  console.log('kaas');
+  console.log(toevoegenProfiel);
+  await db.collection('profielen').insertOne(toevoegenProfiel);
+
+  res.redirect('/matches')
+})
+
+app.get('/matches', async (req, res) => {
     //hobby bepalen
     //gegevens bewaren
     //lijst met matches op basis van hobby
-  
-  const profielen = await db.collection('profielen').find({}).toArray();
-
+  const query = {"hobby": "Puzzelen"};
+  const filtered = await db.collection('profielen').find({query}).toArray();
+  console.log(filtered);
   // const query = {"hobby": "puzzelen"}
   // const options = {sort : {hobby:1}}
   // const profielen = await db.collection('profielen').find({query, options}).toArray();
-
-
-  res.render('matches', {profielen})
+  res.render('matches', {matches: filtered})
 })
 
 
