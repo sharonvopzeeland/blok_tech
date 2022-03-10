@@ -153,8 +153,8 @@ app.post('/profiel', async (req, res) => {
   console.log('yo');
 
   let toevoegenProfiel = {
-    slug: slug(req.body.naam),
-    name: req.body.naam,
+    slug: slug(req.body.name),
+    name: req.body.name,
     email: req.body.email,
     leeftijd: req.body.leeftijd,
     hobby: req.body.hobby,
