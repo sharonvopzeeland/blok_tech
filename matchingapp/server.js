@@ -134,7 +134,20 @@ app.get('/profiel', (req, res) => {
 
 })
 
-app.post('/matches', async (req, res) => {
+app.get('/matches', async (req, res) => {
+  //hobby bepalen
+  //gegevens bewaren
+  //lijst met matches op basis van hobby
+const query = {"hobby": "Puzzelen"};
+const filtered = await db.collection('profielen').find({query}).toArray();
+console.log(filtered);
+// const query = {"hobby": "puzzelen"}
+// const options = {sort : {hobby:1}}
+// const profielen = await db.collection('profielen').find({query, options}).toArray();
+res.render('matches', {matches: filtered})
+})
+
+app.post('/profiel', async (req, res) => {
   console.log('yo');
 
   let toevoegenProfiel = {
@@ -149,21 +162,10 @@ app.post('/matches', async (req, res) => {
   console.log(toevoegenProfiel);
   await db.collection('profielen').insertOne(toevoegenProfiel);
 
-  res.redirect('/matches')
+  res.redirect('/profiel')
 })
 
-app.get('/matches', async (req, res) => {
-    //hobby bepalen
-    //gegevens bewaren
-    //lijst met matches op basis van hobby
-  const query = {"hobby": "Puzzelen"};
-  const filtered = await db.collection('profielen').find({query}).toArray();
-  console.log(filtered);
-  // const query = {"hobby": "puzzelen"}
-  // const options = {sort : {hobby:1}}
-  // const profielen = await db.collection('profielen').find({query, options}).toArray();
-  res.render('matches', {matches: filtered})
-})
+
 
 
 // van tutorial
