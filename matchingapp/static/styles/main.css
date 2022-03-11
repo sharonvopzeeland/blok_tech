@@ -30,3 +30,18 @@ h1 {
     padding-top: .5em;
     padding-bottom: .5em;
 }
+
+header {
+    background-color: var(--main-color-orange);
+    height: 5em;
+    border-bottom-left-radius: 4em;
+    border-bottom-right-radius: 4em;
+}
+header img {
+   display: block;
+   padding-top: 1em;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+

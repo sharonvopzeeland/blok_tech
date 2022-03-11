@@ -1,0 +1,10 @@
+.start {
+    background-color: var(--main-color-orange);
+}
+
+.start a {
+    margin: auto;
+    display: block;
+    margin-top: 5.5em;
+    font-size: 3em;
+}
