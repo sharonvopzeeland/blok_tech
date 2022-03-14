@@ -31,12 +31,10 @@
     "gulp-clean-css": "^4.3.0",
     "gulp-concat-css": "^3.1.0",
     "gulp-nodemon": "^2.5.0",
-    "nodemon": "^2.0.15",
     "slug": "^5.3.0"
   },
   "devDependencies": {
     "eslint": "^8.10.0",
     "nodemon": "^2.0.15",
-    "slug": "^5.3.0"
   }
 }
