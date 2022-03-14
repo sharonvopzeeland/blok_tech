@@ -1,6 +1,8 @@
 /* main css */
-*, *::after, *::before {
-    box-sizing:border-box;
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -14,11 +16,17 @@
     --yes-button-green: #72D188;
 }
 
-body{
+body {
     position: relative;
 }
 
-h1, h2, h3, p, a, ul, l {
+h1,
+h2,
+h3,
+p,
+a,
+ul,
+l {
     font-family: new-order, sans-serif;
 }
 
@@ -37,11 +45,10 @@ header {
     border-bottom-left-radius: 4em;
     border-bottom-right-radius: 4em;
 }
+
 header img {
-   display: block;
-   padding-top: 1em;
-   margin-left: auto;
-   margin-right: auto;
+    display: block;
+    padding-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-

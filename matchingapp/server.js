@@ -177,22 +177,6 @@ app.post('/matches', async (req, res) => {
 
 
 
-
-// van tutorial
-//app.get('', (req, res) => {
-//  res.render('tutorial', { text: 'this is ejs'})
-// })
-
-//app.get('/about', (req, res) => {
-//  res.render('about', { text: 'about page'})
-// }) 
-
-
-
-
-
-
-
 // ERROR
 app.get('*', (req, res) => {
   res.status(404).send('Error 404 file not found')
