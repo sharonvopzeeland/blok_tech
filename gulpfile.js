@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 const concat = require('gulp-concat');
-const nodemon = require('gulp-nodemon');
+const nodemon = require('gulp-nodemon') || null;
 const cleanCSS = require('gulp-clean-css');
 
 gulp.task('css', () => (
