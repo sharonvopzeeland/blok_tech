@@ -28,6 +28,8 @@ Open de map in de terminal en run de code:
 
 Ik gebruik gulp om mijn css-bestanden te mergen.
 
+***
+
 ### Liscense
 Ik heb voor dit project de MIT license gebruikt.
 
