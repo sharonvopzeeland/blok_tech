@@ -4,8 +4,9 @@
   "description": "dit moest ik hebben",
   "main": "server.js",
   "scripts": {
-    "prestart": "gulp",
+    "prestart": "gulp build",
     "start": "node server.js",
+    "dev": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
