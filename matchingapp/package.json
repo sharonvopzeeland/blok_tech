@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "prestart": "gulp",
-    "start": "node server.js",
+    "start": "node server.js && gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
