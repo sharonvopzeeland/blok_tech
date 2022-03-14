@@ -1,10 +1,8 @@
 const gulp = require('gulp');
 const concat = require('gulp-concat');
 const cleanCSS = require('gulp-clean-css');
+const nodemon = require('gulp-nodemon');
 
-if(process.env.NODE_ENV !== 'production') {
-    const nodemon = require('gulp-nodemon');
-}
 
 gulp.task('css', () => (
     gulp.src('./static/styles/*.css')
