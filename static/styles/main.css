@@ -2,22 +2,22 @@
 *,
 *::after,
 *::before {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
-    --background-color-white: #FFFFFF;
-    --main-color-orange: #F2BF87;
-    --second-color-orange: #CE904B;
-    --text-color-black: #232323;
-    --no-button-red: #ED5B5B;
-    --yes-button-green: #72D188;
+  --background-color-white: #ffffff;
+  --main-color-orange: #f2bf87;
+  --second-color-orange: #ce904b;
+  --text-color-black: #232323;
+  --no-button-red: #ed5b5b;
+  --yes-button-green: #72d188;
 }
 
 body {
-    position: relative;
+  position: relative;
 }
 
 h1,
@@ -27,28 +27,28 @@ p,
 a,
 ul,
 l {
-    font-family: new-order, sans-serif;
+  font-family: new-order, sans-serif;
 }
 
 h1 {
-    color: var(--main-color-orange);
-    font-weight: 700;
-    font-size: 3em;
-    text-align: center;
-    padding-top: .5em;
-    padding-bottom: .5em;
+  color: var(--main-color-orange);
+  font-weight: 700;
+  font-size: 3em;
+  text-align: center;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 header {
-    background-color: var(--main-color-orange);
-    height: 5.5em;
-    border-bottom-left-radius: 4em;
-    border-bottom-right-radius: 4em;
+  background-color: var(--main-color-orange);
+  height: 5.5em;
+  border-bottom-left-radius: 4em;
+  border-bottom-right-radius: 4em;
 }
 
 header img {
-    display: block;
-    padding-top: 1em;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  padding-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
 }
