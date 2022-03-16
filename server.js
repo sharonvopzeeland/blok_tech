@@ -18,9 +18,7 @@ let db = null;
 
 const fetch = require('node-fetch');
 
-fetch("https://api.countrystatecity.in/v1/countries/IN/states/MH/cities")
-.then((data) => console.log(data))
-.catch((err) => console.log(err));
+
 
 
 const profielen = [
@@ -150,11 +148,15 @@ res.render('matches', {profielen: filtered})
 });
 
 
-app.get('/profiel', (req, res) => {
+app.get('/profiel', async (req, res) => {
 
-  res.render('profielaanmaken')
-
-})
+  const cities = await fetch("https://api.countrystatecity.in/v1/countries/IN/states/MH/cities")
+  .then((data) => data)
+  .catch((err) => console.log(err));
+  
+  res.render('profielaanmaken', {cities})
+  
+});
 
 
 app.post('/matches', async (req, res) => {
@@ -181,6 +183,10 @@ app.post('/matches', async (req, res) => {
   });
 
   
+  
+
+
+
 })
 
 

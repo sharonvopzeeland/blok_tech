@@ -3,9 +3,11 @@
 }
 
 .start a {
-  margin: auto;
   display: block;
+
+  margin: auto;
   margin-top: 5.5em;
+  
   font-size: 3em;
 }
 

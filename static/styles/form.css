@@ -1,44 +1,48 @@
 /*********** FORM ***********/
 form {
+  display: flex;
+  flex-direction: column;
+
   margin-left: auto;
   margin-right: auto;
   width: max-content;
-  display: flex;
-  flex-direction: column;
 }
 
 label {
   padding: 0.5em 0.5em;
+
   font-size: 1.3em;
   font-family: new-order, sans-serif;
 }
 
 select {
-  font-size: 0.8em;
-  font-family: new-order, sans-serif;
-  padding: 0.2em 1em;
   margin-left: 1em;
+  padding: 0.2em 1em;
+
+  font-family: new-order, sans-serif;
+  font-size: 0.8em;
 }
 
 input {
-  padding: 0.2em 1em;
   margin-left: 1em;
+  padding: 0.2em 1em;
 }
 
 button {
-  background-color: var(--second-color-orange);
-  color: var(--background-color-white);
-  font-family: new-order, sans-serif;
-  font-weight: 700;
-  font-size: 1.8em;
-  padding: 0.5em 1.5em;
-  border: none;
-  border-radius: 3em;
+  display: block;
+
   margin-top: 4em;
   margin-left: auto;
   margin-right: auto;
-
-  display: block;
+  padding: 0.5em 1.5em;
   width: max-content;
+
+  background-color: var(--second-color-orange);
+  color: var(--background-color-white);
+  font-family: new-order, sans-serif;
+  font-size: 1.8em;
+  font-weight: 700;
+  border: none;
+  border-radius: 3em;
   text-decoration: none;
 }
