@@ -16,6 +16,13 @@ const { redirect } = require('express/lib/response');
 
 let db = null;
 
+const fetch = require('node-fetch');
+
+fetch("https://api.countrystatecity.in/v1/countries/IN/states/MH/cities")
+.then((data) => console.log(data))
+.catch((err) => console.log(err));
+
+
 const profielen = [
   {
     "url": "jopie.jpeg",
@@ -132,14 +139,20 @@ app.get('/index', (req, res) => {
   res.render('index')
 })
 
-app.get('/matches', async (req, res) => {
 
+
+app.get('/matches', async (req, res) => {
 const query = {"hobby": "Puzzelen"};
 const filtered = await db.collection('profielen').find(query).toArray();
 console.log(filtered);
 
+
+fetch("https://api.countrystatecity.in/v1/countries/IN/states/MH/cities")
+.then((data) => res.render('matches', {data}))
+.catch((err) => console.log(err))
+
 res.render('matches', {profielen: filtered})
-})
+});
 
 
 app.get('/profiel', (req, res) => {
@@ -153,11 +166,11 @@ app.post('/matches', async (req, res) => {
 
 
   let toevoegenProfiel = {
-    slug: slug(req.body.name),
     name: req.body.name,
     email: req.body.email,
     leeftijd: req.body.leeftijd,
     hobby: req.body.hobby,
+    omgeving: req.body.omgeving,
   };
 
  
@@ -205,5 +218,3 @@ app.listen(port, () => {
   connectDB().then( () => console.log('We have a connection to mongo!'))
 })
 
-
-//iwehiojowe 
