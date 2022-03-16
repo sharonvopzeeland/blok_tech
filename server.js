@@ -146,11 +146,6 @@ const query = {"hobby": "Puzzelen"};
 const filtered = await db.collection('profielen').find(query).toArray();
 console.log(filtered);
 
-
-fetch("https://api.countrystatecity.in/v1/countries/IN/states/MH/cities")
-.then((data) => res.render('matches', {data}))
-.catch((err) => console.log(err))
-
 res.render('matches', {profielen: filtered})
 });
 
