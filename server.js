@@ -150,11 +150,18 @@ res.render('matches', {profielen: filtered})
 
 app.get('/profiel', async (req, res) => {
 
-  const cities = await fetch("https://api.countrystatecity.in/v1/countries/IN/states/MH/cities")
-  .then((data) => data)
-  .catch((err) => console.log(err));
+
+  // (thirdparty) API -> het werkt niet..
+  // async function getData() {
+  //   let res = fetch('https://api.countrystatecity.in/v1/countries/IN/states/MH/cities')
+  //   return await res.json();
+  // };
+
+  // getData().then(data => {
+  //   console.log(data)
+  // })
   
-  res.render('profielaanmaken', {cities})
+  res.render('profielaanmaken')
   
 });
 
@@ -163,6 +170,7 @@ app.post('/matches', async (req, res) => {
 
 
   let toevoegenProfiel = {
+    slug: slug(req.body.name),
     name: req.body.name,
     email: req.body.email,
     leeftijd: req.body.leeftijd,

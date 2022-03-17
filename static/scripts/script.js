@@ -6,3 +6,4 @@ function toggleHamburger() {
   const navEl = document.querySelector("nav");
   navEl.classList.toggle("toonHamburger");
 }
+
