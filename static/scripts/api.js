@@ -1,6 +1,6 @@
-const {
-    response
-} = require("express");
+// const {
+//     response
+// } = require("express");
 
 const headers = new Headers();
 headers.append("X-CSCAPI-KEY", "UU91cms3ODF1NjFNdjNDTVhVQ0ZoeElpNmRWZU5pS2VXRTlnZ0pPbA==");
@@ -24,30 +24,45 @@ function getData() { // fetch data from the API, parse to usable data, and then 
 
     fetch(url, requestOptions) // fetch data from the API
         .then(response => response.json()) // then, parse the data you get/fetch from the API as JSON
-        .then(johan => cleanData(johan)) // pass the data to function cleanData
-        .then(cleanedData => turnIntoElements(cleanedData)) // pass the cleaned data to function turnIntoElements
+        .then(data => cleanData(data)) // pass the data to function cleanData
+        // .then(cleanedData => turnIntoElements(cleanedData)) // pass the cleaned data to function turnIntoElements
         .then(selectElements => showInForm(selectElements)) // pass the selects (html) to function showInForm
         .catch(error => console.log('error', error)); // if there is an error, log it to the console
 }
 
 // step 1: clean the data
-function cleanData(henk) {
-    console.log(henk)
+function cleanData(data) {
+    console.log(data)
+    const firstFieldApi = data.map(function (data) {
+        const lessData = {
+            id: data.id,
+            city: data.name, 
+            state: data.state,
+            country: data.country,
+            cities: data.cities
+        }
+
+        return lessData
+    })
+
+
+    return firstFieldApi
     // const eersteFieldUitAPI = // TODO: map the data to a new array
     // TODO: return daarna de data (daarmee returnt 'ie het .then() die erna komt (dus gewoon: return eersteFieldUitAPI))
 }
 
-// step 2: turn data into insertable html select elements
-function turnIntoElements(data) {
-    console.log(data)
-    // TODO: zet de data in een select-element (https://codepen.io/deannabosschert/pen/zYpRbvV?editors=0010)
-    return selectElements
-}
 
 // step 3: show the data in the form
-function showInForm(selects) {
-    console.log(selects)
+function showInForm(data) {
+    console.log(data)
     const plaats = document.getElementById("plaats")
+
+    return data.map(data => {
+        plaats.innerHTML +=
+        `
+        <option value="name">${data.city}
+        `
+    })
     // TODO: voeg de select-elementen toe aan de form
     // hint: iets doen met innerHTML of https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML
 }
