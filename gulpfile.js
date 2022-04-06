@@ -3,7 +3,6 @@ const concat = require('gulp-concat');
 const cleanCSS = require('gulp-clean-css');
 const nodemon = require('gulp-nodemon');
 
-
 gulp.task('css', () => (
     gulp.src('./static/styles/*.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
@@ -13,8 +12,9 @@ gulp.task('css', () => (
 
 
 gulp.task('watch', () => (
-    gulp.watch('./static/styles/*.css', gulp.series('css'))
+    gulp.watch('./static/styles/*.css', gulp.parallel('css'))
 ))
+
 
 if(process.env.NODE_ENV !== 'production') {
     gulp.task('start', (done) => (
@@ -28,8 +28,8 @@ if(process.env.NODE_ENV !== 'production') {
     ))
 }
 
-gulp.task('default', gulp.series('css', 'start'))
+gulp.task('default', gulp.parallel('css', 'start'))
 
-gulp.task('build', gulp.series('css'));
+gulp.task('build', gulp.parallel('css'));
 
 

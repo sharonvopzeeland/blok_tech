@@ -3,9 +3,8 @@
 }
 
 .home section h1 {
-  margin: 0;
   padding: 0;
-
+  margin-top: 1em;
   color: var(--background-color-white);
   font-weight: 700;
   font-size: 3em;
@@ -13,9 +12,8 @@
 }
 
 .home section h2 {
-  margin: 0;
   padding: 0;
-
+  margin-bottom: 1.8em;
   color: var(--background-color-white);
   font-weight: 100;
   text-align: center;
@@ -31,3 +29,5 @@
   
   object-fit: fill;
 }
+
+

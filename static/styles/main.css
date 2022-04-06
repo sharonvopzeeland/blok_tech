@@ -39,27 +39,6 @@ h1 {
   text-align: center;
 }
 
-header.hamburger {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-
-  height: 6em;
-
-  background-color: var(--main-color-orange);
-  border-bottom-left-radius: 4em;
-  border-bottom-right-radius: 4em;
-
-  z-index:50;
-}
-
-header.hamburger img {
-  display: block;
-
-  margin-left: 11em;
-  padding: 1.2em;
-
-}
 
 header {
   height: 6em;
