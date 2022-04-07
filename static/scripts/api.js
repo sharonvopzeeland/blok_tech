@@ -5,12 +5,16 @@
 const headers = new Headers();
 headers.append("X-CSCAPI-KEY", "UU91cms3ODF1NjFNdjNDTVhVQ0ZoeElpNmRWZU5pS2VXRTlnZ0pPbA==");
 
-const url = 'https://api.countrystatecity.in/v1/countries/IN/states/MH/cities'
+const url = 'https://api.countrystatecity.in/v1/countries/IN/states/MH/cities?ciso=NL' + new URLSearchParams({ciso: 'NL'})
 const requestOptions = {
     method: 'get',
     headers: headers,
     redirect: 'follow'
 };
+
+const countriesJSON = 'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/countries.json';
+const statesJSON = 'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/states.json';
+const citiesJSON = 'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/cities.json';
 
 // TODO: wannneer je je omgeving hebt aangegeven (en dus op een option binnen de select "omgeving" hebt geklikt)
 // ..dan moet je de juiste data ophalen van de API (en dus getData() uitvoeren) enzovoorts
@@ -37,9 +41,8 @@ function cleanData(data) {
         const lessData = {
             id: data.id,
             city: data.name, 
-            state: data.state,
-            country: data.country,
-            cities: data.cities
+            state: data.state_name,
+            country: data.country_name,
         }
 
         return lessData
@@ -54,13 +57,12 @@ function cleanData(data) {
 
 // step 3: show the data in the form
 function showInForm(data) {
-    console.log(data)
     const plaats = document.getElementById("plaats")
 
     return data.map(data => {
         plaats.innerHTML +=
         `
-        <option value="name">${data.city}
+        <option value="country">${data.city}
         `
     })
     // TODO: voeg de select-elementen toe aan de form
