@@ -1,32 +1,27 @@
-// const {
-//     response
-// } = require("express");
+// code for apiURL from Deanna (student-assistent), got so much helpful code and explaination from Deanna.
 
+const apiKey = 'UU91cms3ODF1NjFNdjNDTVhVQ0ZoeElpNmRWZU5pS2VXRTlnZ0pPbA=='
 const headers = new Headers();
-headers.append("X-CSCAPI-KEY", "UU91cms3ODF1NjFNdjNDTVhVQ0ZoeElpNmRWZU5pS2VXRTlnZ0pPbA==");
-
-const url = 'https://api.countrystatecity.in/v1/countries/IN/states/MH/cities?ciso=NL' + new URLSearchParams({ciso: 'NL'})
+headers.append("X-CSCAPI-KEY", apiKey);
 const requestOptions = {
     method: 'get',
     headers: headers,
     redirect: 'follow'
 };
 
-const countriesJSON = 'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/countries.json';
-const statesJSON = 'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/states.json';
-const citiesJSON = 'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/cities.json';
 
-// TODO: wannneer je je omgeving hebt aangegeven (en dus op een option binnen de select "omgeving" hebt geklikt)
-// ..dan moet je de juiste data ophalen van de API (en dus getData() uitvoeren) enzovoorts
 
-// stap 1: wanneer je op die option hebt geklikt, voer dan getData() uit, waarbij je ook meegeeft welke omgeving je hebt gekozen
-// wanneerjeopdeoptionklikt.addEventlistener etc
-getData()
+function changeValue(event) {
+    console.log(event)
+    const pickedState = event.target.value
+    document.getElementById('plaats').disabled = false
 
-function getData() { // fetch data from the API, parse to usable data, and then pass it on to cleanData(), turn into select elements, and then show in the form
-    // let apiUrl = `${url}?${city}` // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals?retiredLocale=nl
-
-    fetch(url, requestOptions) // fetch data from the API
+    const beginURL = ' https://api.countrystatecity.in/v1'
+    const country = 'NL'
+    const state = pickedState
+    const apiURL = `${beginURL}/countries/${country}/states/${state}/cities`
+    
+    fetch(apiURL, requestOptions) // fetch data from the API
         .then(response => response.json()) // then, parse the data you get/fetch from the API as JSON
         .then(data => cleanData(data)) // pass the data to function cleanData
         // .then(cleanedData => turnIntoElements(cleanedData)) // pass the cleaned data to function turnIntoElements
@@ -34,40 +29,64 @@ function getData() { // fetch data from the API, parse to usable data, and then 
         .catch(error => console.log('error', error)); // if there is an error, log it to the console
 }
 
-// step 1: clean the data
+const omgeving = document.getElementById('omgeving');
+console.log(omgeving)
+omgeving.addEventListener('change', changeValue)
+
+
 function cleanData(data) {
     console.log(data)
-    const firstFieldApi = data.map(function (data) {
-        const lessData = {
-            id: data.id,
-            city: data.name, 
-            state: data.state_name,
-            country: data.country_name,
-        }
+    
 
+    const secondFieldApi = data.map(function (data) {
+        const lessData = {
+            city: data.name
+        }
         return lessData
     })
 
 
-    return firstFieldApi
-    // const eersteFieldUitAPI = // TODO: map the data to a new array
-    // TODO: return daarna de data (daarmee returnt 'ie het .then() die erna komt (dus gewoon: return eersteFieldUitAPI))
+    return secondFieldApi
 }
 
-
-// step 3: show the data in the form
+// place data from API in created option tag in HTML, make it clear every time a user select a new state
 function showInForm(data) {
-    const plaats = document.getElementById("plaats")
+    const city = document.getElementById("plaats")
+   
+    city.innerHTML = ``
 
     return data.map(data => {
-        plaats.innerHTML +=
+        
+
+        city.innerHTML +=
         `
-        <option value="country">${data.city}
+        <option value="">${data.city}
         `
     })
-    // TODO: voeg de select-elementen toe aan de form
-    // hint: iets doen met innerHTML of https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML
 }
+
+
+// getData()
+
+// function getData() { // fetch data from the API, parse to usable data, and then pass it on to cleanData(), turn into select elements, and then show in the form
+//     // let apiUrl = `${url}?${city}` // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals?retiredLocale=nl
+
+//     fetch(apiURL, requestOptions) // fetch data from the API
+//         .then(response => response.json()) // then, parse the data you get/fetch from the API as JSON
+//         .then(data => cleanData(data)) // pass the data to function cleanData
+//         // .then(cleanedData => turnIntoElements(cleanedData)) // pass the cleaned data to function turnIntoElements
+//         .then(selectElements => showInForm(selectElements)) // pass the selects (html) to function showInForm
+//         .catch(error => console.log('error', error)); // if there is an error, log it to the console
+// }
+
+
+
+
+
+
+
+
+
 
 
 
