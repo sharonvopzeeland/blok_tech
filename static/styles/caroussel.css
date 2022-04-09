@@ -1,6 +1,20 @@
 /***** deels code is van tessa, https://github.com/TessaFlorance/Blok-tech */
+.caroussel {
+  overflow: scroll;
+  scroll-snap-type: x mandatory;
+}
 
 .caroussel ul {
+  display: flex;
+
+  margin: 2em;
+  padding: 0;
+
+  list-style: none;
+  transition: ease-out .7s;
+}
+
+.disabledJS {
   display: flex;
 
   margin: 2em;

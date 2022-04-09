@@ -8,9 +8,9 @@
 
         <section class="caroussel">
             <h1>Jouw matches</h1>
-            <h2>swipe voor meer</h2>
+            <h2>scroll voor meer</h2>
             
-                <ul>
+                <ul class="disabledJS">
                     <% profielen.forEach(function(profiel) { %>
                         <li>
                             <img src="images/<%= profiel.url %>" alt="Profielfoto">
@@ -19,10 +19,18 @@
                             <p>Omgeving: <%= profiel.omgeving %></p>  
                         </li>
                     <% }) %>
-                </ul>
-                
+                </ul> 
+        </section>
+
+        <section class="button-container">
+            <button id="back" disabled><</button>
+            <button id="next" disabled>></button>
         </section>
     </main>
+
+    <footer>
+        <script src="/scripts/caroussel.js"></script>
+    </footer>
 
 </body>
 </html>

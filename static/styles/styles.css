@@ -1,22 +1,4 @@
-a {
-  display: block;
 
-  margin-top: 1em;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0.5em 1.5em;
-  width: max-content;
-
-  background-color: var(--second-color-orange);
-  color: var(--background-color-white);
-  font-family: new-order, sans-serif;
-  font-size: 1.8em;
-  font-weight: 700;
-  text-decoration: none;
-
-  border: none;
-  border-radius: 3em;
-}
 
 li {
   color: var(--text-color-black);

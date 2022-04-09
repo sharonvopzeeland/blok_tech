@@ -12,6 +12,7 @@
   --main-color-orange: #f2bf87;
   --second-color-orange: #ce904b;
   --text-color-black: #232323;
+  --grey-disabled: #808080;
 
 }
 
@@ -37,6 +38,37 @@ h1 {
   font-size: 3em;
   font-weight: 700;
   text-align: center;
+}
+
+p {
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 1em;
+
+  color: var(--text-color-black);
+  font-family: new-order, sans-serif;
+  font-size: 1.2em;
+  font-weight: 400;
+
+}
+
+a {
+  display: block;
+
+  margin-left: auto;
+  margin-right: auto;
+  
+  padding: 0.5em 1.5em;
+  width: max-content;
+
+  background-color: var(--second-color-orange);
+  color: var(--background-color-white);
+  font-family: new-order, sans-serif;
+  font-size: 1.6em;
+  font-weight: 700;
+  border: none;
+  border-radius: 1em;
+  text-decoration: none;
 }
 
 

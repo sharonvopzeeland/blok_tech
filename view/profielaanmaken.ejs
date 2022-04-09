@@ -15,8 +15,8 @@
                 <input type="email" name="email" id="email" required size="30">
            
 
-            <label for="leeftijd">Leeftijd:</label>
-                <input type="number" name="leeftijd" id="leeftijd">
+            <label for="age">Leeftijd:</label>
+                <input type="number" name="age" id="age">
             
 
             <label for="hobby">Hobby's:</label>
@@ -32,8 +32,8 @@
             
 
           
-            <label for="omgeving">Omgeving:</label>
-                <select name="omgeving" id="omgeving">
+            <label for="province">Provincie:</label>
+                <select name="province" id="province">
                     <option value="default" selected>-- Kies een provincie --</option>
                     <option value="NH">Noord-Holland</option>
                     <option value="ZH">Zuid-Holland</option>
@@ -50,17 +50,18 @@
                 </select>
             
 
-            <!-- <label for="provincie">Provincie</label>
-                <select name="provincie" id="provincie">
-                        
-                </select> -->
-            <!-- select is filled with API data based on the clicked option from 'omgeving' above -->
-            <label for="plaats">Plaats:</label> 
-                <select name="plaats" id="plaats" disabled>
-                    
-                    <!-- hier de plaats-opties renderen, gebaseerd op de plaats die hierboven geselecteerd is -->
+            
+            <label for="city">Plaatsnaam:</label> 
+                <!-- hier komt de API data in option tags te staan gebasseerd op welke provincie hierboven geselecteerd is -->
+                <select name="city" id="city" disabled hidden>
+                    <!-- hier komen die option tags -->
                 </select>
-    
+
+                <!-- als er js aanstaat wordt dit NIET laten zien -->
+                <noscript>
+                    <input type="text" id="cityText">
+                </noscript>
+                
             <button type="submit">Maak aan</button>
         </form>
 

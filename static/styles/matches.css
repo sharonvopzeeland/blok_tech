@@ -2,7 +2,7 @@
   background-color: var(--main-color-orange);
 }
 
-.home section h1 {
+.caroussel h1 {
   padding: 0;
   margin-top: 1em;
   color: var(--background-color-white);
@@ -11,7 +11,7 @@
   text-align: center;
 }
 
-.home section h2 {
+.caroussel h2 {
   padding: 0;
   margin-bottom: 1.8em;
   color: var(--background-color-white);
@@ -19,7 +19,7 @@
   text-align: center;
 }
 
-.home section img {
+.caroussel img {
   display: block;
   
   margin-left: auto;
@@ -30,4 +30,21 @@
   object-fit: fill;
 }
 
+button:disabled, button[disabled] {
+  background-color: var(--grey-disabled);
+  cursor: default;
+}
 
+.button-container {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.button-container button {
+  cursor: pointer;
+  margin-top: 0;
+}

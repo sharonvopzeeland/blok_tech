@@ -1,14 +1,21 @@
 .start {
-  background-color: var(--background-color-white);
+    background-color: var(--main-color-orange);
 }
 
-.start a {
-  display: block;
+.start main img {
+    width: 20em;
+}
 
-  margin: auto;
-  margin-top: 5.5em;
-  
-  font-size: 2em;
+.start main a {
+    background-color: var(--background-color-white);
+    color: var(--second-color-orange);
+    margin-top: 50%;
+    font-size: 2em;
 }
 
 
+
+.start main p {
+    width: 70%;
+
+}
