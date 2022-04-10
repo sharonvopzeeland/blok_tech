@@ -1,11 +1,7 @@
 .zero main section p {
   width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 1em;
+}
 
-  color: var(--text-color-black);
-  font-family: new-order, sans-serif;
-  font-size: 1.2em;
-  font-weight: 400;
+.zero main a {
+  margin-top: 5em;
 }

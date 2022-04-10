@@ -16,103 +16,8 @@ const { redirect } = require('express/lib/response');
 
 let db = null;
 
-const fetch = require('node-fetch');
 
 
-
-
-const profielen = [
-  {
-    "url": "jopie.jpeg",
-    "naam": "Jopie",
-    "email": "jopie123@gmail.com",
-    "leeftijd": 81,
-    "hobby": "Puzzelen",
-    "omgeving": "Noord-Holland"
-  }, 
-
-  {
-    "url": "henry.jpeg",
-    "naam": "Henry",
-    "email": "henrybooms@gmail.com",
-    "leeftijd": 79,
-    "hobby": "Puzzelen",
-    "omgeving": "Zuid-Holland"
-  },
-
-  {
-    "url": "joop.jpeg",
-    "naam": "Joop",
-    "email": "joopkaars@gmail.com",
-    "leeftijd": 72,
-    "hobby": "Puzzelen",
-    "omgeving": "Noord-Holland"
-  },
-
-  {
-    "url": "leone.jpeg",
-    "naam": "Leone",
-    "email": "leonehogeslag@gmail.com",
-    "leeftijd": 76,
-    "hobby": "Puzzelen",
-    "omgeving": "Friesland"
-  },
-
-  {
-    "url": "miep.jpeg",
-    "naam": "Miep",
-    "email": "miepmop@gmail.com",
-    "leeftijd": 88,
-    "hobby": "Puzzelen",
-    "omgeving": "Groningen"
-  },
-
-  {
-    "url": "frank.jpg",
-    "naam": "Frank",
-    "email": "frankus@gmail.com",
-    "leeftijd": 80,
-    "hobby": "Kaarten",
-    "omgeving": "Zuid-Holland"
-  },
-
-  {
-    "url": "piet.jpeg",
-    "naam": "Piet",
-    "email": "pietje00@gmail.com",
-    "leeftijd": 84,
-    "hobby": "Kaarten",
-    "omgeving": "Limburg"
-  },
-
-  {
-    "url": "ruud.jpeg",
-    "naam": "Ruud",
-    "email": "ruudkastoe@gmail.com",
-    "leeftijd": 69,
-    "hobby": "Kaarten",
-    "omgeving": "Zeeland"
-  },
-
-  {
-    "url": "sientje.jpeg",
-    "naam": "Sientje",
-    "email": "sientje56@gmail.com",
-    "leeftijd": 65,
-    "hobby": "Kaarten",
-    "omgeving": "Noord-Holland"
-  },
-
-  {
-    "url": "toni.jpeg",
-    "naam": "Toni",
-    "email": "toontjeboontje@gmail.com",
-    "leeftijd": 76,
-    "hobby": "Kaarten",
-    "omgeving": "Drenthe"
-  }
-
-]
 
 
 // static files (middleware)
@@ -201,7 +106,7 @@ app.post('/matches', async (req, res) => {
 
 // ERROR
 app.get('*', (req, res) => {
-  res.status(404).send('Error 404 file not found')
+  res.status(404).render('404')
 })
 
 

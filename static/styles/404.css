@@ -1,0 +1,21 @@
+.error section {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.error main section p {
+    width: 70%;
+    margin-top: 1.5em;
+}
+
+.error main section img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 22em;
+    margin-top: -1.5em;
+}
+
+.error main a {
+    margin-top: 5em;
+}
