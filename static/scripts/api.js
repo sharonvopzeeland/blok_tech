@@ -50,8 +50,6 @@ function cleanData(data) {
         }
         return lessData
     })
-
-
     return fieldApi
 }
 
